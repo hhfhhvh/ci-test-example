@@ -13,7 +13,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '22' # 或 'lts'，与你本地一致
+          node-version: '20' # 或 'lts'，保持和本地 Node.js 版本一致
 
       - name: Install dependencies
         run: npm install
