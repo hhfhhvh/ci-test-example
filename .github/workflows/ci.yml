@@ -13,10 +13,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20' # 或 'lts'，保持和本地 Node.js 版本一致
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
+
+      # 给 mocha 添加执行权限，避免权限拒绝
+      - name: Add execute permission to mocha
+        run: chmod +x node_modules/.bin/mocha
 
       - name: Run tests
         run: npm test
